@@ -1,0 +1,104 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{graphicx} % graphics package (image insertion and formatting)
+\usepackage{amsmath}  % allows access to the equation* environment
+\usepackage{verbatim} % comment blocks
+\graphicspath{{images/}}
+
+\title{Defaulyt document}
+\author{Alex Bryan}
+\date{January 2024}
+
+\begin{document}
+\maketitle
+
+\begin{comment}
+
+\textbf{}                                        :for bold
+\underline{}                                     :to underline
+\textit{}                                        :for italics
+\emph{}                                          :for context-based emphasis
+\verb|text|                                      :like emphasis in terms of auto-formatting
+\includegraphics[options]{name}                  :includes graphic
+\\                                               :newline, can also use double enter to start new paragraph
+\newline
+
+
+\begin{figure}[hpt]                              :[x] denotes ALLOWED page placement. h=source (with text), p=float (on own page w/o text), t=top of page, b=bottom of page, !=override formatting
+    \centering
+    \includegraphics[width=0.75\textwidth]{name} :configure figure to be scaled to 75% width
+    \caption[short]{title}                       :title configurations for the figure
+    \label{fig:name}                         :labelling the figure with fig:name allows for \ref access. A figure number is automatically configured
+\end{figure}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{||c|c|c||}                   :create table. "c c c" denotes 3 centered rows, r and l can be used for right and left allignment as well. "|" indicates vertical column lines
+                                                 :  "||" indicates double vertical column lines
+        \hline                                   :horizontal line
+        Col1 & Col2 & Col3 \\ [0.5ex]            :"&" demarcates individual cells, \\ indicates when to enter next row, [(X)ex] adds space below of X width
+        \hline\hline                             :double \hline will split the vertical line within the table, creating a "floating" section
+        cell1 & cell2 & cell3 \\
+        cell4 & cell5 & cell6 \\  
+        cell7 & cell8 & cell9 \\ [1ex]
+        \hline
+    \end{tabular}
+    \caption{Caption}
+    \label{table:name}
+\end{table}                                      :NOTE: can use TablesGenerator.com to generate tables and export as .tex code
+
+\ref{fig/table:name}                             :reference a labelled figure/table
+\pageref{fig/table:name}                         :reference page number of a labelled figure/table
+
+
+\begin{abstract}                                 :create an abstract. This is inserted after \begin{document}
+    Abstract
+\end{abstract}
+
+\tableofcontents                                 :add table of contents. Ennumerated chapters/sections/ect. are automatically included
+\addcontentsline{toc}{section}{Section Name}     :unnumbered sections can be included with this after \section*{Section Name} declaration. {toc} and {section} can be adapted to include unnumbered sections in other formatting things
+\chapter{Chapter name}                           :label a chapter
+\section{Section name}                           :label a section, if chapter is used it will format as {Chapter number}.{Section number} "Section name"
+\subsection{Subsection name}                     :label a subsection. Chains like chapters do to sections
+\section*{Section name}                          :unnumbered section. * in general unnumbers auto-formatted commands
+
+
+\begin{itemize}                                  :bulleted list
+    \item 
+\end{itemize}
+
+\begin{enumerate}                                :numbered list
+    \item 
+\end{enumerate}
+
+
+$ equation $                                     :inline equations
+\( equation \)
+\begin{math}
+    equation
+\end{math}
+
+\[ equation \]                                   :display equations. Appear centered on screen and in their own line. Can be enumerated or listed.
+\begin{equation}
+    equation
+\end{equation}
+\begin{displaymath}
+    equation
+\end{displaymath}
+\begin{equation*}
+    equation
+\end{equation*}
+
+\dots                                            :elipses
+X^{n}                                            :superscript
+X_{n}                                            :subscript
+\int_{min}^{max}                                 :integral (with subscript and superscript for bounds)
+\frac{num}{den}                                  :fractions
+\omega                                           :lowercase Greek symbols
+\delta
+\Omega                                           :uppercase Greek symbols
+\Delta
+\sin(x)                                          :trig functions
+\log(x)                                          :log function
+    
+\end{comment}
+\end{document}
